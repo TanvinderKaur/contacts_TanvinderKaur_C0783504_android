@@ -39,12 +39,17 @@ public class MainFragment extends Fragment
     private EditText contactPhone;
     private EditText contactEmail;
     private EditText contactAddress;
+    Contact selectedC;
     private FloatingActionButton fab;
-    static ContactListAdapter adapter = new ContactListAdapter(R.layout.card_layout) {
+     ContactListAdapter adapter = new ContactListAdapter(R.layout.card_layout) {
         @Override
         public void onClicktoUpdate(int pos) {
-         //   Contact c = contactz.get(pos);
-          //  c.setContactAddress(contactAddress);
+             selectedC = contactz.get(pos);
+            contactFirstName.setText(selectedC.getContactFirstName());
+            contactLastName.setText(selectedC.getContactLastName());
+            contactPhone.setText(selectedC.getContactPhone());
+            contactEmail.setText(selectedC.getContactEmail());
+            contactAddress.setText(selectedC.getContactAddress());
         }
     };
     //CONSTRUCTOR
